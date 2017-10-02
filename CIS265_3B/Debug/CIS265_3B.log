@@ -1,0 +1,4 @@
+﻿  main.c
+c:\users\jim\documents\visual studio 2017\projects\cis265\cis265_3b\cis265_3b\main.c(62): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  CIS265_3B.vcxproj -> C:\Users\Jim\Documents\Visual Studio 2017\Projects\CIS265\CIS265_3B\Debug\CIS265_3B.exe
+  CIS265_3B.vcxproj -> C:\Users\Jim\Documents\Visual Studio 2017\Projects\CIS265\CIS265_3B\Debug\CIS265_3B.pdb (Partial PDB)
