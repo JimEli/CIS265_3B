@@ -46,28 +46,37 @@ float taxBrackets[MAX_BRACKETS][3] = {
 };
 
 // Program starts here.
-int main(void) {
+int main(void) 
+{
 	float income = 0.; // Income (input).
 	float tax = 0.;    // Computed tax (output).
 
 	fputs("Enter income (0 to 1,000,000): ", stdout);
-	if (scanf_s("%f", &income)) {
-		if (income >= 0. && income <= 1000000.) {
+	
+	if (scanf_s("%f", &income)) 
+	{
+		if (income >= 0. && income <= 1000000.) 
+		{
 			// Determine tax bracket and calculate amount of tax.
-			for (int i = 0; i < MAX_BRACKETS; i++) {
-				if (income >= taxBrackets[i][MIN_INCOME] && income <= taxBrackets[i][MAX_INCOME]) {
+			for (int i = 0; i < MAX_BRACKETS; i++) 
+			{
+				if (income >= taxBrackets[i][MIN_INCOME] && income <= taxBrackets[i][MAX_INCOME]) 
+				{
 					// tax = base tax for bracket + (i+1)% of income exceeding the base bracket income.
 					tax = taxBrackets[i][BASE_TAX] + (float)(i + 1.) / 100. * (income - taxBrackets[i][MIN_INCOME]);
 					break;
 				}
 			}
+			
 			// Report tax.
 			fprintf(stdout, "On income of: $%0.2f, tax due is: $%0.2f\n", income, tax);
 		}
-		else // Income outside bounds...
+		else 
+			// Income outside bounds.
 			fputs("Income must be between $0 and 1M.\n", stdout);
 	}
-	else // Scanf failure...
+	else 
+		// Scanf failure.
 		fputs("Invlaid income entered. Try again.\n", stdout);
 }
 
